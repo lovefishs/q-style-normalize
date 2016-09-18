@@ -1,0 +1,30 @@
+{
+  "name": "q-style-normalize",
+  "version": "1.0.0",
+  "description": "自定义 normalize.css",
+  "main": "dist/normalize.css",
+  "style": "dist/normalize.css",
+  "scripts": {
+    "postcss": "postcss --config postcss.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@192.168.1.121:ui-module/q-style-normalize.git"
+  },
+  "keywords": [
+    "normalize.css"
+  ],
+  "author": "changming.huang@woqutech.com",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "6.4.1",
+    "cssnano": "^3.7.4",
+    "postcss-cli": "2.6.0",
+    "postcss-extend": "1.0.5",
+    "postcss-import": "8.1.2",
+    "postcss-mixins": "5.2.0",
+    "postcss-nested": "1.0.0",
+    "postcss-simple-vars": "3.0.0"
+  }
+}

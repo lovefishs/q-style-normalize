@@ -1,0 +1,23 @@
+{
+  "use": [
+    "autoprefixer",
+    "postcss-import",
+    "postcss-simple-vars",
+    "postcss-extend",
+    "postcss-nested",
+    "postcss-mixins",
+    "cssnano"
+  ],
+  "input": "src/normalize.css",
+  "output": "dist/normalize.css",
+  "local-plugins": true,
+  "watch": true,
+  "autoprefixer": {
+    "browsers": "last 2 versions"
+  },
+  "cssnano": {
+    "discardComments": {
+      "removeAll": true
+    }
+  }
+}
