@@ -1,11 +1,12 @@
 {
   "name": "q-style-normalize",
   "version": "1.0.0",
-  "description": "自定义 normalize.css",
+  "description": "Custom Normalize.css",
   "main": "dist/normalize.css",
   "style": "dist/normalize.css",
   "scripts": {
-    "postcss": "postcss --config postcss.json",
+    "dev": "postcss --config postcss.development.json",
+    "build": "postcss --config postcss.production.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,12 +20,8 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "6.4.1",
-    "cssnano": "^3.7.4",
+    "cssnano": "3.7.4",
     "postcss-cli": "2.6.0",
-    "postcss-extend": "1.0.5",
-    "postcss-import": "8.1.2",
-    "postcss-mixins": "5.2.0",
-    "postcss-nested": "1.0.0",
-    "postcss-simple-vars": "3.0.0"
+    "postcss-nested": "1.0.0"
   }
 }

@@ -1,6 +1,6 @@
 # q-style-normalize
 
-自定义 [Normalize.css](https://github.com/necolas/normalize.css)。
+Custom [Normalize.css](https://github.com/necolas/normalize.css)。
 
 **NPM**
 
@@ -8,6 +8,17 @@
 npm install --save q-style-normalize
 ```
 
+## Develop
+
+```sh
+npm run dev
+```
+
+## Build
+
+```sh
+npm run build
+```
 
 ## Browser support
 

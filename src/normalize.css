@@ -1,12 +1,4 @@
-@charset "utf-8";
-
-/*!
- * Normalize
- * v0.0.2
- * MIT License
- *
- * tks: github.com/necolas/normalize.css
- */
+@charset 'utf-8';
 
 /*!
  * 所有元素都继承 html 的 box-sizing 方便重置
@@ -15,8 +7,8 @@ html {
   box-sizing: border-box;
 }
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -138,10 +130,12 @@ progress {
  * 1. 防止没设置 controls 的 audio,video 显示出来.
  * 2. 去除 ios5 中额外的高度.
  */
-audio:not([controls]),
-video:not([controls]) {
-  display: none; /* 1 */
-  height: 0; /* 2 */
+audio,
+video {
+  &:not([controls]) {
+    display: none; /* 1 */
+    height: 0; /* 2 */
+  }
 }
 
 /*!
@@ -164,30 +158,30 @@ template {
  * Link
  * 1. Remove the gray background color from active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ * 3. Remove the outline on focused links when they are also active or hovered in all browsers (opinionated).
  */
 a {
   background-color: transparent; /* 1 */
   -webkit-text-decoration-skip: objects; /* 2 */
-}
 
-/*!
- * Remove the outline on focused links when they are also active or hovered in all browsers (opinionated).
- */
-a:active,
-a:hover {
-  outline-width: 0;
+  &:active,
+  &:hover {
+    outline-width: 0; /* 3 */
+  }
 }
 
 /*!
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-abbr[data-original-title],
-abbr[title] {
-  cursor: help;
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+abbr {
+  &[data-original-title],
+  &[title] {
+    cursor: help;
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
 }
 
 /*!
@@ -278,30 +272,35 @@ blockquote {
   /* quotes: "\201C" "\201D" "\2018" "\2019"; // 前两个值规定第一级引用嵌套, 后两个值规定下一级引号嵌套 '"' '"' "'" "'" */
   border-left: 4px solid #ccc;
   background: #f9f9f9;
-}
-blockquote footer,
-blockquote small,
-blockquote cite {
-  font-size: 80%;
-  color: #999;
-}
-blockquote footer:before,
-blockquote small:before,
-blockquote cite:before {
-  content: '\2014 \2009';
-}
-blockquote footer > cite:before,
-blockquote small > cite:before {
-  content: '';
+
+  footer,
+  small,
+  cite {
+    font-size: 80%;
+    color: #999;
+
+    &::before {
+      content: '\2014 \2009';
+    }
+  }
+
+  footer,
+  small {
+    & > cite::before {
+      content: '';
+    }
+  }
 }
 q {
   font-family: Georgia, serif;
-}
-q:before {
-  content: '\201C';
-}
-q:after {
-  content: '\201D';
+
+  &::before {
+    content: '\201C';
+  }
+
+  &::after {
+    content: '\201D';
+  }
 }
 
 /*!
@@ -375,12 +374,12 @@ code {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-}
-pre::selection,
-code::selection, {
-  color: #111;
-  background: #b3d4fc;
-  text-shadow: none;
+
+  &::selection {
+    color: #111;
+    background: #b3d4fc;
+    text-shadow: none;
+  }
 }
 pre {
   padding: 10px;
@@ -432,38 +431,49 @@ html input[type='button'], /* Avoid the WebKit bug in Android 4.0.* where (2) de
   cursor: pointer;
   /* 定义元素外观为 button */
   -webkit-appearance: button; /* IE:Edge partial support */
+  -moz-appearance: button;
+  appearance: button;
 }
 
-/* Remove the inner border and padding in Firefox. */
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  /* Remove the inner border and padding in Firefox. */
+  &::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+  }
 
-/* Restore the focus styles unset by the previous rule. */
-button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  /* Restore the focus styles unset by the previous rule. */
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
 }
 
 /* input number remove arrows */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
+/*!
+ * 修正 Chrome 中 input [type="number"] 在特定高度和 font-size 时,下面一个箭头光标变成「cursor: text」
+ * demo: http://jsfiddle.net/FFXEc/
+ * 动画演示：http://gtms04.alicdn.com/tps/i4/T18kd8FCtaXXc_FhcF-330-350.gif
+ */
+[type='number'] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    height: auto;
+  }
 }
 
 /* Re-set default cursor for disabled elements */
-button[disabled],
-html input[disabled] {
-  cursor: default;
+button,
+html input {
+  &[disabled] {
+    cursor: default;
+  }
 }
 
 /* Add Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
@@ -485,22 +495,14 @@ input {
 }
 
 /*!
- * 修正 Chrome 中 input [type="number"] 在特定高度和 font-size 时,下面一个箭头光标变成「cursor: text」
- * demo: http://jsfiddle.net/FFXEc/
- * 动画演示：http://gtms04.alicdn.com/tps/i4/T18kd8FCtaXXc_FhcF-330-350.gif
- */
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*!
  * 1. 修正 Safari 5 和 Chrome 中「appearance」被设置为「searchfield」的问题
  * 2. 修正 Safari 5 和 Chrome 中「box-sizing」被设置为 「border-box」的问题
  * 3. Correct the outline style in Safari.
  */
 [type='search'] {
   -webkit-appearance: textfield; /* 1 */
+  -moz-appearance: textfield; /* 1 */
+  appearance: textfield; /* 1 */
   box-sizing: content-box; /* 2 */
   outline-offset: -2px; /* 3 */
 }
@@ -508,9 +510,13 @@ input {
 /*!
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  */
-[type='search']::-webkit-search-cancel-button,
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+[type='search'] {
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }
 
 /*!
@@ -528,6 +534,8 @@ input {
 ::-webkit-file-upload-button {
   font: inherit; /* 1 */
   -webkit-appearance: button; /* 2 */
+  -moz-appearance: button; /* 2 */
+  appearance: button; /* 2 */
 }
 
 /* Define consistent border and padding */
