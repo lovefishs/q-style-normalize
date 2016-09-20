@@ -28,15 +28,15 @@ html {
 @viewport         { width: device-width; }
 
 /*!
- * 1. Set default font family to sans-serif.
- * 2. 调整所有浏览器的 line height.
+ * 1. 设置浏览器默认字体.
+ * 2. 设置默认 line-height.
  * 3. 防止 iOS 横屏字号放大, 同时保证在PC上 zoom 功能正常.
  * 4. 对字体进行平滑设置(http://www.webhek.com/css-font-smoothing).
  * 5. Changes the default tap highlight to be completely transparent in iOS.
  */
 html {
-  font-family: 'Microsoft Yahei', tahoma, sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
+  font-family: 'Microsoft YaHei', tahoma, arial,'Hiragino Sans GB', sans-serif; /* 1 */
+  line-height: 1.5; /* 2 */
   /* http://caniuse.com/#search=text-size-adjust */
   -ms-text-size-adjust: 100%; /* 3 */
   -webkit-text-size-adjust: 100%; /* 3 */
@@ -70,9 +70,8 @@ ol {
   list-style: none;
   padding: 0;
 }
-.ul,
-.ol {
-  padding-left: 30px;
+dt {
+  font-weight: 700;
 }
 .ul {
   list-style-type: disc;
@@ -80,12 +79,17 @@ ol {
 .ol {
   list-style-type: decimal;
 }
-.ul .ul,
-.ol .ul {
-  list-style-type: circle;
-}
-dt {
-  font-weight: 700;
+.ul,
+.ol {
+  padding-left: 30px;
+
+  .ul {
+    list-style-type: circle;
+
+    .ul {
+      list-style-type: square;
+    }
+  }
 }
 
 /*!
@@ -487,31 +491,23 @@ input {
  * It's recommended that you don't attempt to style these elements.
  * Firefox's implementation doesn't respect box-sizing, padding, or width.
  * 1. Remove excess padding in IE 8/9/10.
- * 2. Add the correct box sizing in IE 10-.
  */
 [type='checkbox'],
 [type='radio'] {
   padding: 0; /* 1 */
-  box-sizing: border-box; /* 2 */
 }
 
 /*!
- * 1. 修正 Safari 5 和 Chrome 中「appearance」被设置为「searchfield」的问题
- * 2. 修正 Safari 5 和 Chrome 中「box-sizing」被设置为 「border-box」的问题
- * 3. Correct the outline style in Safari.
+ * 1. 修正 Safari 5 和 Chrome 中「appearance」被设置为「searchfield」的问题.
+ * 2. Correct the outline style in Safari.
  */
 [type='search'] {
   -webkit-appearance: textfield; /* 1 */
   -moz-appearance: textfield; /* 1 */
   appearance: textfield; /* 1 */
-  box-sizing: content-box; /* 2 */
-  outline-offset: -2px; /* 3 */
-}
+  outline-offset: -2px; /* 2 */
 
-/*!
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- */
-[type='search'] {
+  /* Remove inner padding and search cancel button in Safari and Chrome on OS X. */
   &::-webkit-search-cancel-button,
   &::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -541,17 +537,26 @@ input {
 
 /* Define consistent border and padding */
 fieldset {
-  border: 1px solid #ddd;
+  margin: 0 2px;
   padding: 5px;
+  border: 1px solid #ddd;
 }
 
 /*!
  * 1. Remove padding so people aren't caught out if they zero out fieldsets.
  */
+/*!
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
 legend {
-  padding: 0; /* 1 */
-  max-width: 100%;
-  color: inherit;
+  display: table; /* 1 */
+  padding: 0; /* 3 */
+  max-width: 100%; /* 1 */
+  color: inherit; /* 2 */
+  white-space: normal; /* 1 */
   border: 0;
 }
 
@@ -567,11 +572,6 @@ textarea {
   *vertical-align: auto; /* 3 */
   border: 1px solid;
   resize: vertical; /* 4 */
-}
-
-/*! Select border */
-select {
-  border: 1px inset;
 }
 
 /*!

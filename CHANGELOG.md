@@ -2,7 +2,18 @@
 
 ### HEAD
 
-* 新增 demo 页面。
+* bugfix。
+
+### 1.2.0 (2016-09-20)
+
+* 更新默认字体为 `'Microsoft YaHei', tahoma, arial,'Hiragino Sans GB', sans-serif` 。
+* 更新 `line-height` 值为 `1.5` 。
+* 更新 `.ul` `.ol` 嵌套 `list-style-type` 显示值。
+* 清除 `select` 元素的 `border` 设置。
+* 更新 `[type='search']` 元素设置。
+* 清除 `[type='checkbox']` `[type='radio']` 元素的 `box-sizing` 设置。
+* 更新 `fieldset` `legend` 元素样式。
+* 新增 test 页面。
 
 ### 1.1.0 (2016-09-19)
 
