@@ -474,17 +474,21 @@ button,
   }
 }
 
-/* Re-set default cursor for disabled elements */
-button,
-html input {
-  &[disabled] {
-    cursor: default;
-  }
-}
-
 /* Add Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet */
 input {
   line-height: normal;
+}
+
+/* Re-set default cursor for disabled elements */
+.disabled,
+[disabled],
+button[disabled],
+input[disabled] {
+  cursor: default;
+  outline: 0 none;
+  opacity: .65;
+  filer: alpha(opacity=40);
+  pointer-events: none;
 }
 
 /*!

@@ -4,6 +4,10 @@
 
 * bugfix。
 
+### 1.2.1 (2016-09-20)
+
+* 修复更新元素 `disabled` 状态样式。
+
 ### 1.2.0 (2016-09-20)
 
 * 更新默认字体为 `'Microsoft YaHei', tahoma, arial,'Hiragino Sans GB', sans-serif` 。
