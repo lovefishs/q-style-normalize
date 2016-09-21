@@ -1,7 +1,7 @@
 {
   "use": [
-    "autoprefixer",
     "postcss-nested",
+    "postcss-cssnext",
     "cssnano"
   ],
   "input": "src/normalize.css",
@@ -12,6 +12,7 @@
     "browsers": "last 2 versions"
   },
   "cssnano": {
+    "autoprefixer": false,
     "discardComments": {
       "removeAll": true
     }

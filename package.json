@@ -19,9 +19,9 @@
   "author": "changming.huang@woqutech.com",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "6.4.1",
-    "cssnano": "3.7.4",
+    "cssnano": "3.7.5",
     "postcss-cli": "2.6.0",
+    "postcss-cssnext": "2.8.0",
     "postcss-nested": "1.0.0"
   }
 }
