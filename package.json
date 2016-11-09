@@ -19,7 +19,7 @@
   "author": "changming.huang@woqutech.com",
   "license": "MIT",
   "devDependencies": {
-    "cssnano": "3.7.5",
+    "cssnano": "3.8.0",
     "postcss-cli": "2.6.0",
     "postcss-cssnext": "2.8.0",
     "postcss-nested": "1.0.0"
