@@ -28,22 +28,26 @@ html {
 @viewport         { width: device-width; }
 
 /*!
- * 1. 设置浏览器默认字体.
- * 2. 设置默认 line-height.
- * 3. 防止 iOS 横屏字号放大, 同时保证在PC上 zoom 功能正常.
- * 4. 对字体进行平滑设置(http://www.webhek.com/css-font-smoothing).
- * 5. Changes the default tap highlight to be completely transparent in iOS.
+ * 1. 设置基准字号.
+ * 2. 设置浏览器默认字体.
+ * 2. 西文: 首先查找 Helvetica (Mac)，然后查找 Tahoma (Win)，都找不到就用 Arial (Mac&Win)
+ * 2. 中文: 首先查找 'Hiragino Sans GB' (Mac:冬青黑体简体中文), 'Microsoft YaHei' (Mac & Win: 微软雅黑), SimSun (Win: 没有微软雅黑的系统(XP等)查找中易宋体)
+ * 3. 设置默认 line-height.
+ * 4. 防止 iOS 横屏字号放大, 同时保证在PC上 zoom 功能正常.
+ * 5. 对字体进行平滑设置(http://www.webhek.com/css-font-smoothing).
+ * 6. Changes the default tap highlight to be completely transparent in iOS.
  */
 html {
-  font-family: 'Microsoft YaHei', tahoma, arial,'Hiragino Sans GB', sans-serif; /* 1 */
-  line-height: 1.5; /* 2 */
+  font-size: 16px; /* 1 */
+  font-family: Helvetica, Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif; /* 2 */
+  line-height: 1.5; /* 3 */
   /* http://caniuse.com/#search=text-size-adjust */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
-  /* -moz-font-smoothing: grayscale; */ /* 4 */
-  /* -webkit-font-smoothing: antialiased; */ /* 4 */
-  /* text-rendering: optimizeLegibility; */ /* 4 */
-  -webkit-tap-highlight-color: transparent; /* 5 */
+  -ms-text-size-adjust: 100%; /* 4 */
+  -webkit-text-size-adjust: 100%; /* 4 */
+  /* -moz-font-smoothing: grayscale; */ /* 5 */
+  /* -webkit-font-smoothing: antialiased; */ /* 5 */
+  /* text-rendering: optimizeLegibility; */ /* 5 */
+  -webkit-tap-highlight-color: transparent; /* 6 */
 }
 
 /*!
