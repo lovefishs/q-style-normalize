@@ -13,6 +13,26 @@ html {
 }
 
 /*!
+ * 页面滚动条出现时不跳动
+ * http://www.zhangxinxu.com/wordpress/2015/01/css-page-scrollbar-toggle-center-no-jumping/
+ */
+html {
+  overflow-y: scroll;
+}
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+:root body {
+  position: absolute;
+  min-height: 100%;
+}
+body {
+  width: 100vw;
+  overflow: hidden;
+}
+
+/*!
  * Make viewport responsive
  *
  * @viewport is needed because IE 10+ doesn't honor <meta name="viewport"> in
