@@ -22,10 +22,9 @@ npm run build
 
 ## Browser support
 
-* Chrome (last two)
-* Edge (last two)
-* Firefox (last two)
-* Firefox ESR
-* Internet Explorer 8+
-* Opera (last two)
-* Safari 6+
+* Chrome
+* Edge
+* Firefox ESR+
+* Internet Explorer 10+
+* Safari 8+
+* Opera

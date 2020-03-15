@@ -2,16 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1">
-  <meta http-equiv="cleartype" content="on">
-  <meta name="renderer" content="webkit">
-
-  <meta name="viewport" content="width=device-width">
-
-  <title>q-style-normalize</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Test normalize.css</title>
   <link rel="stylesheet" type="text/css" href="../dist/normalize.css">
-
   <style>
     .container {
       margin-right: auto;
@@ -21,10 +15,10 @@
     .mb {
       margin-bottom: 15px;
     }
-    #boxsize button,
-    #boxsize input,
-    #boxsize select,
-    #boxsize textarea {
+    #box button,
+    #box input,
+    #box select,
+    #box textarea {
       width: 200px;
       padding: 5px;
       border: 1px solid #333;
@@ -336,12 +330,10 @@
         <p><label>URL input <input type="url" placeholder="http://"></label></p>
         <p><label>Password input <input type="password" value="password"></label></p>
         <p><label>File input <input type="file"></label></p>
-
         <p><label>Radio input <input type="radio" name="rad"></label></p>
         <p><label>Checkbox input <input type="checkbox"></label></p>
         <p><label><input type="radio" name="rad"> Radio input</label></p>
         <p><label><input type="checkbox"> Checkbox input</label></p>
-
         <p><label>Select field <select><option>Option 01</option><option>Option 02</option></select></label></p>
         <p><label>Textarea <textarea cols="30" rows="5" >Textarea text</textarea></label></p>
       </fieldset>
@@ -356,12 +348,10 @@
         <p><label for="idw">Week input</label> <input type="week" id="idw" value="1970-W01"></p>
         <p><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="1970-01-01T00:00:00Z"></p>
         <p><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="1970-01-01T00:00"></p>
-
         <p><label for="irb">Radio input</label> <input type="radio" id="irb" name="rad"></p>
         <p><label for="icb">Checkbox input</label> <input type="checkbox" id="icb"></p>
         <p><input type="radio" id="irb2" name="rad"> <label for="irb2">Radio input</label></p>
         <p><input type="checkbox" id="icb2"> <label for="icb2">Checkbox input</label></p>
-
         <p><label for="s">Select field</label> <select id="s"><option>Option 01</option><option>Option 02</option></select></p>
         <p><label for="t">Textarea</label> <textarea id="t" cols="30" rows="5" >Textarea text</textarea></p>
       </fieldset>
@@ -373,21 +363,19 @@
         <p><input type="button" value="Button (input)"></p>
         <p><input type="submit" value="Submit (input)"></p>
         <p><input type="submit" value="Disabled (input)" disabled></p>
-
         <p><button type="reset">Reset (button)</button></p>
         <p><button type="button">Button (button)</button></p>
         <p><button type="submit">Submit (button)</button></p>
         <p><button type="submit" disabled>Disabled (button)</button></p>
       </fieldset>
 
-      <fieldset id="boxsize">
+      <fieldset id="box">
         <legend>box-sizing tests</legend>
         <div><input type="text" value="text"></div>
         <div><input type="email" value="email@qmail.com"></div>
         <div><input type="search" value="search"></div>
         <div><input type="url" value="http://example.com"></div>
         <div><input type="password" value="password"></div>
-
         <div><input type="color" value="#000000"></div>
         <div><input type="number" value="5"></div>
         <div><input type="range" value="10"></div>
@@ -396,24 +384,19 @@
         <div><input type="week" value="1970-W01"></div>
         <div><input type="datetime" value="1970-01-01T00:00:00Z"></div>
         <div><input type="datetime-local" value="1970-01-01T00:00"></div>
-
         <div><input type="radio"></div>
         <div><input type="checkbox"></div>
-
         <div><select><option>Option 01</option><option>Option 02</option></select></div>
         <div><textarea cols="30" rows="5">Textarea text</textarea></div>
-
         <div><input type="image" src="90x24.jpg" alt="Image (input)"></div>
         <div><input type="reset" value="Reset (input)"></div>
         <div><input type="button" value="Button (input)"></div>
         <div><input type="submit" value="Submit (input)"></div>
-
         <div><button type="reset">Reset (button)</button></div>
         <div><button type="button">Button (button)</button></div>
         <div><button type="submit">Submit (button)</button></div>
       </fieldset>
     </form>
-
   </div>
 
 </body>
