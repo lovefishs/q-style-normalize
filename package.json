@@ -1,6 +1,6 @@
 {
   "name": "q-style-normalize",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Custom normalize.css",
   "main": "dist/normalize.css",
   "style": "dist/normalize.css",
@@ -21,8 +21,7 @@
   ],
   "author": "changming.huang@woqutech.com",
   "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "9.7.4",
     "cssnano": "4.1.10",
     "postcss-cli": "7.1.0",
