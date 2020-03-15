@@ -1,27 +1,31 @@
 {
   "name": "q-style-normalize",
-  "version": "1.7.0",
-  "description": "Custom Normalize.css",
+  "version": "2.0.0",
+  "description": "Custom normalize.css",
   "main": "dist/normalize.css",
   "style": "dist/normalize.css",
+  "files": [
+    "LICENSE.md",
+    "dist/normalize.css"
+  ],
   "scripts": {
-    "dev": "postcss --config postcss.development.json",
-    "build": "postcss --config postcss.production.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "postcss src/normalize.css --watch --verbose --output dist/normalize.css",
+    "build": "postcss src/normalize.css --env production --verbose --output dist/normalize.css"
   },
   "repository": {
     "type": "git",
-    "url": "git@192.168.1.121:ui-module/q-style-normalize.git"
+    "url": "git@github.com:lovefishs/q-style-normalize.git"
   },
   "keywords": [
     "normalize.css"
   ],
   "author": "changming.huang@woqutech.com",
   "license": "MIT",
-  "devDependencies": {
-    "cssnano": "3.8.0",
-    "postcss-cli": "2.6.0",
-    "postcss-cssnext": "2.8.0",
-    "postcss-nested": "1.0.0"
+  "devDependencies": {},
+  "dependencies": {
+    "autoprefixer": "9.7.4",
+    "cssnano": "4.1.10",
+    "postcss-cli": "7.1.0",
+    "precss": "4.0.0"
   }
 }
