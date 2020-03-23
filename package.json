@@ -19,7 +19,7 @@
   "keywords": [
     "normalize.css"
   ],
-  "author": "changming.huang@woqutech.com",
+  "author": "ued.woqutech.com",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "9.7.4",
