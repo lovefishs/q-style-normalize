@@ -1,6 +1,6 @@
 {
   "name": "q-style-normalize",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Custom normalize.css",
   "main": "dist/normalize.css",
   "style": "dist/normalize.css",
